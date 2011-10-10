@@ -30,7 +30,7 @@ static value alloc_addr(struct sockaddr *sock)
 {
 	CAMLparam0();
 	CAMLlocal1(result);
-	char output[36];
+	char output[40];
 	int ret = 0;
 
 	switch (sock->sa_family) {
@@ -45,7 +45,7 @@ static value alloc_addr(struct sockaddr *sock)
 		case AF_INET6: {
 			struct sockaddr_in6 *in6 = (struct sockaddr_in6 *) sock;
 			ret = snprintf(output, sizeof(output),
-			        "%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x",
+			        "%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x",
 				in6->sin6_addr.s6_addr[0],
 				in6->sin6_addr.s6_addr[1],
 				in6->sin6_addr.s6_addr[2],
@@ -59,7 +59,9 @@ static value alloc_addr(struct sockaddr *sock)
 				in6->sin6_addr.s6_addr[10],
 				in6->sin6_addr.s6_addr[11],
 				in6->sin6_addr.s6_addr[12],
-				in6->sin6_addr.s6_addr[13]);
+				in6->sin6_addr.s6_addr[13],
+				in6->sin6_addr.s6_addr[14],
+				in6->sin6_addr.s6_addr[15]);
 			break;
 		}
 		default:
