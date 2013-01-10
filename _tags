@@ -1,0 +1,27 @@
+# OASIS_START
+# DO NOT EDIT (digest: c013a1e045183ad29bb6894fe2bcfa7c)
+# Ignore VCS directories, you can use the same kind of rule outside 
+# OASIS_START/STOP if you want to exclude directories that contains 
+# useless stuff for the build process
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library netdev
+"lib/netdev.cmxs": use_netdev
+<lib/netdev.{cma,cmxa}>: use_libnetdev_stubs
+<lib/*.ml{,i}>: pkg_stdext
+<lib/*.ml{,i}>: pkg_threads
+"lib/addr_stubs.c": pkg_stdext
+"lib/addr_stubs.c": pkg_threads
+"lib/bridge_stubs.c": pkg_stdext
+"lib/bridge_stubs.c": pkg_threads
+"lib/link_stubs.c": pkg_stdext
+"lib/link_stubs.c": pkg_threads
+# OASIS_STOP

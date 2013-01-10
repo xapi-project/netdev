@@ -1,0 +1,16 @@
+OASISFormat:  0.3
+Name:         netdev
+Version:      0.1
+Synopsis:     Network device misc bindings
+License:      LGPL-2.1 with OCaml linking exception
+Authors:      various
+Copyrights:   (C) 2012 Citrix
+BuildTools:   ocamlbuild
+Plugins:      DevFiles (0.3), META (0.3)
+
+Library netdev
+  Path: lib
+  Modules: Netdev
+  CSources: addr_stubs.c, bridge_stubs.c, link_stubs.c, netdev.h, sockios_compat.h
+  BuildDepends: stdext, threads
+

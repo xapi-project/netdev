@@ -1,0 +1,6 @@
+# OASIS_START
+# DO NOT EDIT (digest: f1e1da96d19d00a16f9e4170bc4ae088)
+addr_stubs.o
+bridge_stubs.o
+link_stubs.o
+# OASIS_STOP

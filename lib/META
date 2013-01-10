@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: cc787df03c368293951bbcca45ed161c)
+version = "0.1"
+description = "Network device misc bindings"
+requires = "stdext threads"
+archive(byte) = "netdev.cma"
+archive(byte, plugin) = "netdev.cma"
+archive(native) = "netdev.cmxa"
+archive(native, plugin) = "netdev.cmxs"
+exists_if = "netdev.cma"
+# OASIS_STOP
+
