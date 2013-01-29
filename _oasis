@@ -12,5 +12,5 @@ Library netdev
   Path: lib
   Modules: Netdev
   CSources: addr_stubs.c, bridge_stubs.c, link_stubs.c, netdev.h, sockios_compat.h
-  BuildDepends: stdext, threads
+  BuildDepends: stdext, threads, forkexec
 
