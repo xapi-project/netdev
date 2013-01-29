@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: c013a1e045183ad29bb6894fe2bcfa7c)
+# DO NOT EDIT (digest: 1507ff16273945ac5ceaabcfaf06211e)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -18,10 +18,14 @@
 <lib/netdev.{cma,cmxa}>: use_libnetdev_stubs
 <lib/*.ml{,i}>: pkg_stdext
 <lib/*.ml{,i}>: pkg_threads
+<lib/*.ml{,i}>: pkg_forkexec
 "lib/addr_stubs.c": pkg_stdext
 "lib/addr_stubs.c": pkg_threads
+"lib/addr_stubs.c": pkg_forkexec
 "lib/bridge_stubs.c": pkg_stdext
 "lib/bridge_stubs.c": pkg_threads
+"lib/bridge_stubs.c": pkg_forkexec
 "lib/link_stubs.c": pkg_stdext
 "lib/link_stubs.c": pkg_threads
+"lib/link_stubs.c": pkg_forkexec
 # OASIS_STOP
