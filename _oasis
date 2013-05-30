@@ -1,7 +1,7 @@
 OASISFormat:  0.3
 Name:         netdev
-Version:      0.1
-Synopsis:     Network device misc bindings
+Version:      0.9.0
+Synopsis:     Manipulate Linux network devices, bridges and openvswitch instances
 License:      LGPL-2.1 with OCaml linking exception
 Authors:      various
 Copyrights:   (C) 2012 Citrix
