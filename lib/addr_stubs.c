@@ -93,7 +93,8 @@ value stub_if_getaddr(value unit)
 		sock = tmp->ifa_addr;
 		netmask = tmp->ifa_netmask;
 
-		if (sock->sa_family == AF_INET || sock->sa_family == AF_INET6) {
+		if ((sock && netmask) &&
+		    (sock->sa_family == AF_INET || sock->sa_family == AF_INET6)) {
 			name = caml_copy_string(tmp->ifa_name);
 			addrstr = alloc_addr(sock);
 			netmaskstr = alloc_addr(netmask);
