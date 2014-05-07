@@ -11,7 +11,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *)
-open Stringext
+open Xstringext
 open Forkhelpers
 
 type kind = Bridge | Vswitch
@@ -219,10 +219,10 @@ let vsctl_script = "/usr/bin/ovs-vsctl"
 let vsctl args =
   Unix.access vsctl_script [ Unix.X_OK ];
   let output, _ = Forkhelpers.execute_command_get_output vsctl_script args in
-  let stripped = Stringext.String.strip (fun c -> c='\n') output in
+  let stripped = Xstringext.String.strip (fun c -> c='\n') output in
   match stripped with
     | "" -> []
-    | s -> Stringext.String.split '\n' s
+    | s -> Xstringext.String.split '\n' s
 
 let add name ?uuid = 
   let extra = match uuid with
