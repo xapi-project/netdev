@@ -1,6 +1,6 @@
 # OASIS_START
-# DO NOT EDIT (digest: 7032111bb7cb6cff929009c1b4e34542)
-version = "0.9.0"
+# DO NOT EDIT (digest: 332c7cc1e8938f574b070a99b94ddb1e)
+version = "0.9.1"
 description =
 "Manipulate Linux network devices, bridges and openvswitch instances"
 requires = "stdext threads forkexec"
