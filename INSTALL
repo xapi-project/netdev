@@ -7,6 +7,7 @@ The following dependencies are required:
 
 To build:
 
+    oasis setup
     make
 
 To install:
