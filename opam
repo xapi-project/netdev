@@ -12,14 +12,12 @@ install: [
   [make "install" "BINDIR=%{bin}%"]
 ]
 remove: [
-  ["oasis" "setup"]
-  [make "uninstall" "BINDIR=%{bin}%"]
   ["ocamlfind" "remove" "netdev"]
 ]
 available: [ os = "linux" ]
 depends: [
   "ocamlfind"
-  "xapi-stdext" {>="2.0.0"}
+  "xapi-stdext"
   "xapi-forkexecd"
   "oasis" {build}
 ]
