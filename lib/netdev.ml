@@ -11,8 +11,9 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *)
-open Stdext
-open Xstringext
+
+open Xapi_stdext_std.Xstringext
+open Xapi_stdext_unix
 open Forkhelpers
 
 type kind = Bridge | Vswitch
@@ -220,10 +221,10 @@ let vsctl_script = "/usr/bin/ovs-vsctl"
 let vsctl args =
   Unix.access vsctl_script [ Unix.X_OK ];
   let output, _ = Forkhelpers.execute_command_get_output vsctl_script args in
-  let stripped = Xstringext.String.strip (fun c -> c='\n') output in
+  let stripped = String.strip (fun c -> c='\n') output in
   match stripped with
     | "" -> []
-    | s -> Xstringext.String.split '\n' s
+    | s -> String.split '\n' s
 
 let add name ?uuid = 
   let extra = match uuid with
@@ -388,7 +389,7 @@ let get_by_address address =
     (fun device ->
        (* CA-21402: Not everything returned by list() is guaranteed to be a directory containing an address;
 	  so we have to make sure we catch exceptions here so we keep trying the next one and so on.. *)
-       try String.lowercase (get_address device) = String.lowercase address with _ -> false)
+       try String.lowercase_ascii (get_address device) = String.lowercase_ascii address with _ -> false)
     (list ()) 
   
 let get_pcibuspath name =
